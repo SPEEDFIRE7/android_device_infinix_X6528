@@ -1,8 +1,8 @@
 # Android device tree for Infinix Hot 40i (X6528)
 
 LineageOS 20 (Android 13) device tree for the Infinix Hot 40i X6528 / X6528B
-(Unisoc T606 / UMS9230 / qogirl6). Same structure as the Smart 8 (X6528)
-reference tree.
+(Unisoc T606 / UMS9230 / qogirl6). Same structure as the Smart 8 (X6525)
+reference tree(thanks for @Seuj09 .
 
 Build target:
 
