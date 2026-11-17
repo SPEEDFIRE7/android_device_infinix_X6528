@@ -18,7 +18,9 @@ vendor/infinix/X6528   <- generated vendor makefiles (separate zip)
 ```
 
 The vendor makefiles are generated from `proprietary-files.txt`. The blobs
-themselves are **not** redistributed here; extract them from your own dump.
+themselves are **not** redistributed here; However, you can view a ready-made version from here:
+https://github.com/SPEEDFIRE7/android_vendor_infinix_X6528/releases/tag/vendor-blobs
+or extract them from your own dump.
 
 ## Setup
 
