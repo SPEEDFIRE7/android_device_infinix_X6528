@@ -1,0 +1,20 @@
+on init
+    write /sys/module/musb_hdrc/parameters/kernel_init_done 1
+    setprop sys.usb.configfs 1
+    setprop sys.usb.controller musb-hdrc.1.auto
+
+on fs
+    wait /dev/block/platform/soc/soc:ap-apb/201d0000.sdio
+    symlink /dev/block/platform/soc/soc:ap-apb/201d0000.sdio /dev/block/bootdevice
+
+on post-fs
+    # Wait synchronously for async touch firmware loading / input registration
+    # before 'on boot' launches recovery and enumerates /dev/input/event* once.
+    exec - root root -- /system/bin/sh /system/bin/load_modules.sh
+
+on boot
+    write /sys/module/musb_hdrc/parameters/kernel_init_done 1
+    exec - root root -- /system/bin/sh -c "for u in /sys/class/udc/*; do if [ -e \"$u\" ]; then setprop sys.usb.controller $(basename \"$u\"); break; fi; done"
+    write /sys/class/backlight/sprd_backlight/brightness 128
+    start vendor.sprd.hardware.boot@1.2-service
+    start android.hardware.health-service.example
