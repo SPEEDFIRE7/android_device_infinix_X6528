@@ -224,20 +224,6 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
-    name: "init.X6528.rc",
-    src: "etc/init.X6528.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
-    name: "init.X6528.usb.rc",
-    src: "etc/init.X6528.usb.rc",
-    sub_dir: "init/hw",
-    vendor: true,
-}
-
-prebuilt_etc {
     name: "init.X6528B.rc",
     src: "etc/init.X6528B.rc",
     sub_dir: "init/hw",
